@@ -1,0 +1,76 @@
+.ctaBar {
+    position: relative;
+    z-index: 950;
+    background-color: $green;
+    padding: 10px 0;
+    transition: .3s ease;
+}
+
+.ctaBar__left {
+    display: none;
+    @include breakpoint(md) {
+        display: flex;
+    }
+}
+
+.ctaBar__left--item {
+    .link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+            margin: 0 5px 0 0;
+        }
+    }
+    @include breakpoint(md) {
+        margin: 0 20px 0 0;
+        &:last-child {
+            margin: 0;
+        }
+    }
+}
+
+.ctaBar__right {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint(md) {
+        justify-content: flex-end;
+    }
+}
+
+.ctaBar__right--item {
+    .link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+            margin: 0 5px 0 0;
+        }
+    }
+    @include breakpoint(md) {
+        margin: 0 20px 0 0;
+        &:last-child {
+            margin: 0;
+        }
+    }
+}

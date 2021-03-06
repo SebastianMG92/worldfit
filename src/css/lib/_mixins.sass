@@ -1,0 +1,50 @@
+@mixin breakpoint($point) 
+   @if $point == sm 
+      @media only screen and (min-width: 576px) 
+         @content
+   @else if $point == smV
+      @media only screen and (orientation: landscape) and (max-width: 813px) and (max-height: 500px)
+         @content
+   @else if $point == iphoneX
+      @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3)
+         @content
+   @else if $point == iphoneXV
+      @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) 
+         @content
+   @else if $point == md 
+      @media only screen and (min-width: 768px) 
+         @content
+   @else if $point == lg 
+      @media only screen and (min-width: 992px) 
+         @content
+   @else if $point == xl 
+      @media only screen and (min-width: 1200px) 
+         @content
+   @else if $point == xxl
+      @media only screen and (min-width: 1400px) 
+         @content
+   @else if $point == ipadH
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)
+         @content
+   @else if $point == ipadV
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)
+         @content
+   @else if $point == ipadProH
+      @media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)
+         @content
+   @else if $point == ipadProV
+      @media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)
+         @content
+   @else if $point == firefox
+      @-moz-document url-prefix()
+         @content
+   @else if $point == ie
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+         @content
+
+
+@mixin fontfluid($font-max, $font-min)
+   $font-min-px: $font-min+'px'
+   $viewport: 100*1vw
+   $mobile: 320*1px
+   font-size: unquote( "calc(#{$font-min-px} + (#{$font-max} - #{$font-min}) * (#{$viewport} - #{$mobile}) / (#{767} - #{320}))" )

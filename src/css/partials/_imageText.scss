@@ -1,0 +1,54 @@
+.imageText {
+    position: relative;
+    overflow: hidden;
+    &.right {
+        .row {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.imageText__bg {
+    position: relative;
+    padding: 0;
+    align-self: center;
+    margin: 0 0 30px;
+    @include breakpoint(md) {
+        margin: 0;
+    }
+}
+
+.imageText__bg--img {
+    position: relative;
+}
+
+.imageText__content {
+    align-self: center;
+    padding: 0 30px;
+    @include breakpoint(xl) {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    @include breakpoint(xxl) {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+}
+
+.imageText__content--info {
+    text-align: center;
+    .subheading {
+        color: $purple;
+    }
+    .heading {
+        color: $green;
+        margin: 0 0 30px;
+    }
+    @include breakpoint(md) {
+        text-align: left;
+        .text {
+            max-width: 80%;
+        }
+    }
+}

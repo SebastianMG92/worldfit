@@ -1,0 +1,265 @@
+*
+    font-family: $font-main
+
+body
+    line-height: 1.2
+    font-size: 16px
+    color: $black
+    &::after
+        content: ""
+        position: absolute
+        background-color: rgba(255, 255, 255, 0)
+        z-index: -1
+        transition: .3s ease-in
+    &.hidde
+        overflow: hidden
+    &.hidde-overlay
+        position: relative
+        overflow: hidden
+        min-height: 100vh
+        &::after
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            z-index: 700
+            background-color: rgba(0, 0, 0, .7)
+
+a
+    transition: .3s ease
+    display: inline-block
+
+figure
+    margin: 0
+
+p:empty
+    display: none
+
+.post, .page, .page-content, .entry-content, .entry-summary
+    margin: 0
+    overflow-x: hidden
+
+.content-area
+    overflow: hidden
+
+:focus
+    box-shadow: none
+    outline: none
+
+.no-js :focus, .keyboard-focus :focus
+    box-shadow: 0 0 2px 1px #00cdcb
+    
+.site-main
+    margin: 110px 0 0
+////////////////////////
+// TITLES
+///////////////////////
+
+.heading
+    margin: 0
+    font-family: $font-secondary
+    line-height: 1
+    font-weight: 600
+    margin-bottom: 0 0 1em
+    @include breakpoint(lg)
+        font-size: 35px
+
+.subheading
+    margin: 0 0 10px
+    font-family: $font-secondary
+    font-weight: 500
+
+////////////////////////
+// TEXT BLOCKS
+///////////////////////
+
+p.text, .text p, .text
+    font-family: $font-main
+    margin: 0 0 1em
+    font-weight: 400
+    line-height: 1
+    &:last-child
+        margin: 0
+    & *
+        font-family: $font-main
+    strong, b
+        font-weight: bold
+    a
+        color: inherit
+    ol, ul
+        padding-left: 20px
+        margin: 0
+        font-size: 16px
+        li
+            margin-bottom: 5px
+
+////////////////////////
+// BUTTONS
+///////////////////////
+
+.btn
+    font-family: $font-main
+    cursor: pointer
+    &.disabled
+        pointer-events: none
+        opacity: .3
+
+.btn-solid
+    position: relative
+    display: inline-block
+    vertical-align: middle
+    border: 0
+    padding: 15px 40px
+    line-height: 1
+    text-decoration: none
+    transition: .3s ease-out
+    &.btn-black
+        color: white
+        background-color: $black
+        &:hover, &:focus
+            background-color: white
+            color: $black
+
+.btn-bone
+    background-image: url(../assets/brand/bone-purple.png)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 31px 10px
+    text-decoration: none
+    .text
+        color: white
+        margin: 0
+        font-size: 14px
+        transform: rotate(-7deg)
+        font-family: $font-secondary
+    @include breakpoint(md)
+        padding: 70px 10px
+        .text
+            color: white
+            margin: 0
+            font-size: 25px
+
+.btn-arrow
+    display: flex
+    align-items: center
+    justify-content: center
+    text-decoration: none
+    svg
+        width: 20px
+        margin: 0 0 0 10px
+        transition: .3s ease
+    &.btn-white
+        color: white
+        svg
+            fill: white
+    &.btn-purple
+        color: $purple
+        svg
+            fill: $purple
+    &:hover, &:focus
+        svg
+            transform: translateX(5px)
+
+.btn-radio
+    position: relative
+    display: inline-block
+    vertical-align: middle
+    border: 0
+    padding: 9px 12px
+    line-height: 1
+    text-decoration: none
+    transition: .3s ease-out
+    border-radius: 20px
+    cursor: pointer
+    transition: .3s ease
+    &.btn-purple
+        background-color: $purple
+        color: white
+        &:hover, &:focus
+            background-color: $purple-2
+
+
+.btn-share
+    background-color: transparent
+    border: 0
+    box-shadow: initial
+    padding: 5px
+    svg
+        display: block
+        width: 30px
+        transition: .3s ease
+        border-radius: 100%
+    &.btn-white
+        svg
+            fill: #fff
+    &.btn-green
+        svg
+            fill: $green
+
+/////////////////
+//paddings
+/////////////////
+.custom-paddings
+    padding-top: var(--pt-mobile)
+    padding-bottom: var(--pb-mobile)
+    @include breakpoint(lg)
+        padding-top: var(--pt-desktop)
+        padding-bottom: var(--pb-desktop)
+
+
+////////////////////////
+// Aditional css
+///////////////////////
+
+.container, .container-lg, .container-md, .container-sm, .container-xl
+    @include breakpoint(xxl)
+        max-width: 1380px
+
+
+
+.text-center
+    text-align: center
+
+
+
+.js-lazy-bg
+    background-image: var(--background-image)
+    
+.swiper-lazy-preloader, .js-preloader
+    border: 4px solid $green
+    border-top: 4px solid transparent
+    width: 42px
+    height: 42px
+    position: absolute
+    left: 50%
+    top: 50%
+    margin-left: -21px
+    margin-top: -21px
+    z-index: 10
+    transform-origin: 50%
+    animation: spin-preload 1s linear infinite
+    box-sizing: border-box
+    border-radius: 50%
+
+@keyframes spin-preload
+  100%
+    transform: rotate(360deg)
+
+// Scrollbar
+::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+    border-radius: 10px
+    background-color: #F5F5F5
+
+::-webkit-scrollbar
+    width: 3px
+    background-color: #F5F5F5
+ 
+::-webkit-scrollbar-thumb
+    border-radius: 10px
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+    background-color: $green

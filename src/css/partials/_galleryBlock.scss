@@ -1,0 +1,110 @@
+.galleryBlock__content {
+    text-align: center;
+    margin-bottom: 30px;
+    .subheading {
+        margin: 0;
+        color: $purple;
+    }
+    .heading {
+        color: $green;
+    }
+    @include breakpoint(md) {
+        text-align: left;
+        margin-bottom: 0;
+    }
+}
+
+.galleryBlock__button{
+    text-align: center;
+    @include breakpoint(md) {
+        text-align: right;
+        align-self: flex-end;
+        .btn-radio {
+            padding: 10px 20px;
+        }
+    }
+}
+
+.galleryBlock__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    // align-items: flex-start;
+    margin-top: 50px;
+}
+
+.galleryBlock__gallery--container {
+    display: block;
+    flex-basis: 100%;
+    margin: 0 0 10px;
+    border-radius: 40px;
+    overflow: hidden;
+    &.hidde {
+        display: none;
+    }
+    @include breakpoint(md) {
+        flex-basis: calc(100% / 3 - 20px);
+        margin: 0 10px 10px;
+    }
+}
+
+.galleryBlock__gallery--item {
+    display: block;
+    position: relative;
+    padding: 0 0 100%;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $green;
+        opacity: 0;
+        transition: .3s ease;
+        z-index: 0;
+    }
+    &:hover, &:focus {
+        &::after {
+            opacity: 1;
+        }
+        .content {
+            opacity: 1;
+        }
+    }
+    .image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-size: cover;
+        background-position: center;
+        background-image: var(--background-image);
+    }
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-weight: 600;
+        z-index: 1;
+        opacity: 0;
+        text-align: center;
+        svg {
+            display: block;
+            width: 18px;
+            height: 18px;
+            margin: 0 auto 10px;
+            path {
+                fill: none;
+                stroke: white;
+                stroke-width: 1.5px;
+            }
+        }
+        p {
+            margin: 0;
+        }
+    }
+}

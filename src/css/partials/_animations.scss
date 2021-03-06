@@ -1,0 +1,12 @@
+
+.js-anim-fadeIn-stagger-item {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+
+.js-anim-parallax {
+    .js-anim-parallax-item {
+        transform: translate3d(0 , 50px ,0);
+    }
+}

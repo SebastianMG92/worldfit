@@ -1,0 +1,39 @@
+
+/// Internet explorer notification
+
+.ie-notification {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background-color: #fdf2ab;
+    padding: 10px 30px;
+    font-size: 15px;
+    color: black;
+    z-index: 9999;
+    text-align: center;
+    p {
+      margin: 0;
+    }
+    a, button {
+      margin: 10px 0;
+      background-color: black;
+      color: white;
+      padding: 5px;
+      text-decoration: none;
+      border: 0;
+    }
+    @include breakpoint(md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      p {
+        max-width: 65%;
+      }
+      a, button {
+        margin: 0 5px;
+      }
+    }
+}

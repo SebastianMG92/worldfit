@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Mikado Bold DEMO';
+    src: url('MikadoBoldDEMO.eot');
+    src: url('MikadoBoldDEMO.eot?#iefix') format('embedded-opentype'),
+        url('MikadoBoldDEMO.woff2') format('woff2'),
+        url('MikadoBoldDEMO.woff') format('woff'),
+        url('MikadoBoldDEMO.ttf') format('truetype'),
+        url('MikadoBoldDEMO.svg#MikadoBoldDEMO') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

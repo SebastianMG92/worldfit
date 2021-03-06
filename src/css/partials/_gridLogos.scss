@@ -1,0 +1,55 @@
+.gridLogos__head {
+    .subheading {
+        color: $purple;
+    }
+    .heading {
+        color: $green;
+        margin: 0 0 20px;
+    }
+}
+
+
+.gridLogos__container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto 0;
+}
+
+
+.gridLogos__container--item {
+    padding: 10px;
+    border: 1px solid $gray-4;
+    flex-basis: calc(50%);
+    transition: .3s ease;
+    &:hover, &:focus {
+        background-color: $gray-4;
+    }
+    @include breakpoint(md) {
+        flex-basis: calc(100% / 3);
+    }
+    @include breakpoint(lg) {
+        @for $i from 3 to 6 {
+            &.grid-#{$i} {
+                flex-basis: calc(100% / #{$i});
+            }
+        }
+    }
+}
+
+
+.gridLogos__container--image {
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    img {
+        display: block;
+        object-fit: scale-down;
+        object-position: center;
+    }
+    @include breakpoint(md) {
+        height: 150px;
+        width: 150px;
+    }
+}

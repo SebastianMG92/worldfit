@@ -1,0 +1,96 @@
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 9999;
+    overflow: auto;
+    background-color: white;
+    &.show {
+        display: block;
+    }
+}
+
+
+.lightbox--content {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    // height: 100%;
+
+    margin: 0 auto;
+    padding: 50px 10px 150px;
+    background-size: 300px;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    .heading {
+        // color: $blue-6;
+    }
+
+    @include breakpoint(md) {
+        max-width: 650px;
+        // padding: 0;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        .heading {
+        font-size: 35px;
+        }
+        .formContainer {
+            max-width: 70%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.lightbox--content__text {
+    margin-bottom: 30px;
+    .subheading {
+        color: $purple;
+    }
+    .heading {
+        color: $green;
+        margin: 0 0 30px;
+    }
+    .text, .text * {
+        color: black;
+        margin: 0;
+    }
+}
+
+.lightbox--content--close {
+    color: white;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background: transparent;
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    svg {
+        fill: $green;
+        width: 30px;
+        display: inline-block;
+        margin: 0 0 0 10px;
+    }
+    .b,
+    .c {
+        fill: transparent;
+    }
+    @include breakpoint(md) {
+        position: fixed;
+    }
+}

@@ -1,0 +1,27 @@
+.textBlock {
+    text-align: left;
+}
+
+.textBlock__block {
+    .subheading {
+        color: $purple;
+    }
+    .heading {
+        margin: 0 0 10px;
+        color: $green;
+    }
+    .text {
+        margin: 30px auto 0;
+        max-width: 750px;
+    }
+}
+
+
+///////////
+// Text align left
+///////////
+
+
+.textBlock.center {
+    text-align: center;
+}

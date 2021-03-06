@@ -1,0 +1,108 @@
+.tabsBlock {
+    background-size: contain;
+    background-position: 100%;
+    background-repeat: no-repeat;
+}
+
+.tabsBlock__container {
+    @include breakpoint(md) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+}
+
+.tabsBlock__container--item {
+    margin: 0 0 20px;
+    border: 1px solid $gray-2;
+    border-radius: 30px;
+    box-shadow: 0 0 1px 2px #fbfbfb;
+    background-color: white;
+    @include breakpoint(md) {
+        flex-basis: calc(50% - 10px);
+        margin: 0 5px 20px;
+    }
+}
+
+.tabsBlock__container--button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    width: 100%;
+    padding: 0;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    &::after {
+        content: '\002B';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        color: #777;
+        font-weight: bold;
+    }
+    &.active {
+        &::after {
+            content: "\2212";
+        }
+    }
+    .check-icon {
+        width: 30px;
+        height: 30px;
+        max-width: 30px;
+        border-radius: 50%;
+        flex-basis: 40px;
+        flex-grow: 1;
+        margin: 0 15px 0 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 20px;
+            height: 20px;
+            margin: auto;
+            object-fit: cover;
+        }
+        svg {
+            width: 15px;
+            fill: white;
+        }
+    }
+}
+
+.tabsBlock__container--panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    .text {
+        margin: 0;
+        padding: 20px 10px;
+    }
+}
+
+.tabsBlock__content {
+    margin-bottom: 50px;
+    .subheading {
+        color: $purple;
+    }
+    .heading {
+        color: $green;
+        margin: 0 0 30px;
+    }
+    .text {
+        margin-bottom: 50px;
+    }
+}
+
+.tabsBlock.right {
+    // background-color: red;
+    @include breakpoint(md) {
+        .tabsBlock__container--item {
+            flex-basis: 100%;
+        }
+    }
+}

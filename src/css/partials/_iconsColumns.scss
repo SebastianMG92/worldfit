@@ -1,0 +1,23 @@
+.iconsColumns__item {
+    .heading {
+        color: $green;
+        margin: 15px 0;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .text * {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    @include breakpoint(md) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.iconsColumns__item--icon {
+    max-width: 80px;
+    img {
+        display: block;
+    }
+}

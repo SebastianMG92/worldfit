@@ -1,0 +1,33 @@
+////////////////////////
+// Fonts
+///////////////////////
+
+
+////////////////////////
+// Futura weigths
+///////////////////////
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'Mikado Bold DEMO';
+    src: url('../fonts/mikado/MikadoBoldDEMO.eot');
+    src: url('../fonts/mikado/MikadoBoldDEMO.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/mikado/MikadoBoldDEMO.woff2') format('woff2'),
+        url('../fonts/mikado/MikadoBoldDEMO.woff') format('woff'),
+        url('../fonts/mikado/MikadoBoldDEMO.ttf') format('truetype'),
+        url('../fonts/mikado/MikadoBoldDEMO.svg#MikadoBoldDEMO') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+// Nunito
+
+// Light 300
+// Regular 400
+// Semi-bold 600
+// Bold 700
+// Extra-bold 800
+// Black 900

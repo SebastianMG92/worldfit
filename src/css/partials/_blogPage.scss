@@ -1,0 +1,208 @@
+.blogPage__feed {
+    .posts-navigation {
+        margin: 0;
+    }
+    .nav-links {
+        a {
+            position: relative;
+            text-decoration: none;
+            color: $green;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+    @include breakpoint(lg) {
+        padding-right: 50px;
+        .nav-links {
+            a {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+
+.blogPage__feed--item {
+    display: block;
+    overflow: hidden;
+    padding: 50px 0;
+    border-bottom: 1px solid $gray-2;
+    &:nth-last-child(2) {
+        border-bottom: initial;
+    }
+}
+
+.blogPage__feed--item--image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 30px;
+    padding-bottom: 56.25%;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+    }
+}
+
+.blogPage__feed--item--content{
+    .cat-links {
+        display: block;
+        margin: 20px 0 10px;
+        a {
+            text-transform: uppercase;
+            color: $purple;
+            text-decoration: none;
+            font-weight: 800;
+        }
+    }
+    .heading {
+        color: $green;
+        text-decoration: none;
+        margin: 0 0 15px;
+        h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+    }
+    .blog-data {
+        display: block;
+        text-transform: capitalize;
+        margin: 0 0 10px;
+    }
+    @include breakpoint(lg) {
+        .heading {
+            h2 {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+
+.blogPage__feed--item--footer {
+    text-align: center;
+    margin: 25px 0 0;
+    .share {
+        margin: 0 0 15px;
+        strong {
+            display: block;
+            margin: 0 5px 0 0;
+        }
+        .btn {
+            display: inline-block;
+        }
+    }
+    .link .btn {
+        padding: 9px 60px;
+    }
+    @include breakpoint(lg) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .share {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+    }
+}
+
+
+.blogSingle__head {
+    padding: 50px 0 15px;
+    border-bottom: 1px solid $gray;
+    .cat-links {
+        display: block;
+        margin: 0 0 10px;
+        a {
+            text-transform: uppercase;
+            color: $purple;
+            text-decoration: none;
+            font-weight: 800;
+        }
+    }
+    .heading {
+        color: $green;
+        text-decoration: none;
+        margin: 0 0 15px;
+    }
+    .blog-data {
+        display: block;
+        text-transform: capitalize;
+        margin: 0 0 30px;
+    }
+    @include breakpoint(lg) {
+        .heading {
+            h2 {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+
+.blogSingle__container {
+    .navigation.post-navigation {
+        margin: 50px 0 0 ;
+        a {
+            position: relative;
+            text-decoration: none;
+            color: $purple;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    }
+    @include breakpoint(lg) {
+        padding-right: 50px;
+    }
+}
+
+
+.postRelations{
+    padding: 50px 0 15px;
+}
+
+
+.postRelations__content{
+    .heading {
+        margin: 0 0 30px;
+        color: $green;
+    }
+}
+
+.postRelations__item {
+    .image {
+        position: relative;
+        padding-bottom: 56.25%;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            height: 100%;
+        }
+    }
+    .content {
+        margin: 15px 0 0;
+        text-decoration: none;
+    }
+    .heading {
+        color: $green;
+        margin: 0 0 15px;
+        font-size: 20px;
+    }
+    .text * {
+        color: black;
+    }
+}

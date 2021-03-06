@@ -1,0 +1,25 @@
+////////////////////
+///// Skip top button
+////////////////////
+
+.acc__skip {
+    position: fixed;
+    top: -70px;
+    left: 20px;
+    transition: 0.3s ease-out;
+    z-index: 999;
+    &:focus-within {
+      top: 20px;
+    }
+}
+  
+.acc-close-menu {
+    opacity: 0;
+    overflow: hidden;
+    display: none;
+    &:focus {
+      opacity: 1;
+      display: block;
+    }
+}
+

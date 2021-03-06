@@ -1,0 +1,116 @@
+.site-main, .blogSingle__content
+    & > *:not(section):not(.container-fluid):not(.mask-iframe)
+        padding-left: 15px
+        padding-right: 15px
+        margin-right: auto
+        margin-left: auto
+        width: 100%
+        @media (min-width: 576px)
+            max-width: 540px
+        @media (min-width: 768px)
+            max-width: 720px
+        @media (min-width: 992px)
+            max-width: 960px
+        @media (min-width: 1200px)
+            max-width: 1140px
+    // Headings
+    & > h1, & > h2, & > h3, & > h4, & > h5, & > h6
+        font-family: $font-main
+        margin-bottom: 15px
+        & *
+            font-family: $font-main
+    & > h2
+        font-size: 1.5em
+        @include breakpoint(md)
+            font-size: 2em
+        @include breakpoint(lg)
+            font-size: 2.5em
+    & > h3
+        font-size: 1.5em
+        @include breakpoint(md)
+            font-size: 1.75em
+        @include breakpoint(lg)
+            font-size: 2em 
+    & > h4
+        font-size: 1.3em
+        line-height: 1em
+        @include breakpoint(md)
+            font-size: 1.5em
+        @include breakpoint(lg)
+            font-size: 1.75em 
+    & > h5
+        font-size: 1.1em
+        line-height: 1em
+        @include breakpoint(md)
+            font-size: 1.25em
+        @include breakpoint(lg)
+            font-size: 1.5em 
+    // Normal text
+    & > p, & > ul, & > li, & > strong, & > b, & > em
+        font-weight: 300
+        line-height: 1.4em
+        margin-bottom: 1.5em
+        font-size: 1em
+        & *
+            font-size: inherit
+        strong, b
+            font-weight: 700
+        a
+            color: $purple
+            display: inline
+            font-weight: 600
+        ol, ul
+            padding-left: 20px
+            margin: 0
+            li
+                // font-family: $font-third
+                margin-bottom: 5px
+
+.wp-block-column, .wp-block-group__inner-container, .woocommerce-Tabs-panel, .blogSingle__content
+    & > h1, & > h2, & > h3, & > h4, & > h5, & > h6
+        font-family: $font-main
+        margin-bottom: 15px
+        & *
+            font-family: $font-main
+    & > h2
+        font-size: 1.5em
+        @include breakpoint(md)
+            font-size: 2em
+        @include breakpoint(lg)
+            font-size: 2.5em  
+    & > h3
+        font-size: 1.5em
+        @include breakpoint(md)
+            font-size: 1.75em
+        @include breakpoint(lg)
+            font-size: 2em 
+    & > h4
+        font-size: 1.3em
+        line-height: 1em
+        @include breakpoint(md)
+            font-size: 1.5em
+        @include breakpoint(lg)
+            font-size: 1.75em 
+    & > h5
+        font-size: 1.1em
+        line-height: 1em
+        @include breakpoint(md)
+            font-size: 1.25em
+        @include breakpoint(lg)
+            font-size: 1.5em 
+    & > p, & > ul, & > li, & > strong, & > b, & > em
+        font-weight: 300
+        line-height: 1.4em
+        margin-bottom: 1.5em
+        font-size: 1em
+        & *
+            font-size: inherit
+    img
+        width: auto
+
+.wp-block-image img
+    width: auto
+
+.woocommerce-Tabs-pane
+    h2:first-child
+        display: none

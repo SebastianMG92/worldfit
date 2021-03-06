@@ -1,0 +1,122 @@
+.blogLates {
+    // background: red;
+    .swiper-button-disabled {
+        opacity: 0;
+    }
+    .swiper-button-prev {
+        left: 0;
+        display: none;
+    }
+    .swiper-button-next {
+        right: 0;
+        display: none;
+    }
+    .swiper-pagination-bullet {
+        background-color: black;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: $purple;
+    }
+    @include breakpoint(md) {
+        .swiper-container {
+            padding-bottom: 50px;
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+        .swiper-pagination {
+            bottom: 0;
+        }
+        .swiper-button-prev {
+            display: block;
+            width: 23px;
+        }
+        .swiper-button-next {
+            display: block;
+            width: 23px;
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 25px;
+            color: $purple;
+        }
+    }
+}
+
+.blogLates__item--image {
+    position: relative;
+    height: 200px;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 0 0px #a2a2a2;
+    transition: .3s ease;
+    &:hover, &:focus {
+        box-shadow: 0 0 5px #a2a2a2;
+    }
+    img {
+        height: 100%;
+        object-position: center;
+        object-fit: cover;
+    }
+}
+
+
+.blogLates__item {
+    max-width: 300px;
+    margin: 0 auto 30px;
+    padding: 5px;
+    @include breakpoint(md) {
+        margin: 0;
+        max-width: initial;
+    }
+}
+
+.blogLates__item--date {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: $purple;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 20px 20px;
+    span {
+        color: white;
+        font-weight: 800;
+        font-size: 20px;
+        &.month {
+            font-size: 15px;
+        }
+    }
+}
+
+.blogLates__item--data {
+    display: flex;
+    padding: 10px 10px 20px;
+    span,a {
+        display: flex;
+        align-items: center;
+        margin: 0 15px 0 0;
+        line-height: 1;
+        color: $gray;
+        text-decoration: none;
+    }
+    svg {
+        width: 15px;
+        margin: 0 5px 0 0;
+        fill: $green;
+    }
+}
+
+.blogLates__item--content {
+    padding: 0 10px;
+    .heading {
+        font-size: 25px;
+        margin: 0 0 15px 0;
+    }
+    .btn-arrow {
+        justify-content: flex-start;
+    }
+}

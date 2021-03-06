@@ -1,0 +1,65 @@
+.hero {
+    position: relative;
+    height: 80vh;
+    min-height: 350px;
+    max-height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .container, .row {
+        height: 100%;
+    }
+    @include breakpoint(md) {
+        min-height: 500px;
+        max-height: initial;
+        &.right .row {
+            flex-direction: row-reverse;
+        }
+    }
+    @include breakpoint(lg) {
+        min-height: 700px;
+    }
+    @include breakpoint(lg) {
+    }
+}
+
+
+
+.hero__wave {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    bottom: 0;
+    svg {
+        display: block;
+    }
+    path {
+        fill: white;
+    }
+}
+
+
+
+.hero__content {
+    margin-bottom: 50px;
+    .subheading {
+        color: $green;
+    }
+    .heading {
+        color: white;
+        margin: 0 0 15px;
+    }
+    .text * {
+        color: white;
+    }
+    @include breakpoint(md) {
+        .heading {
+            font-size: 50px;
+        }
+    }
+    @include breakpoint(lg) {
+        margin-bottom: 100px;
+    }
+}
