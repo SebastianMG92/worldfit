@@ -1,17 +1,24 @@
 .galleryBlock__content {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     .subheading {
-        margin: 0;
-        color: $purple;
+        margin: 0 0 10px;
+        color: white;
+        font-weight: 400;
     }
     .heading {
         color: $green;
+        font-size: 30px;
+        color: white;
     }
     @include breakpoint(md) {
         text-align: left;
         margin-bottom: 0;
+        .heading {
+            font-size: 35px;
+        }
     }
+
 }
 
 .galleryBlock__button{
@@ -37,13 +44,13 @@
     display: block;
     flex-basis: 100%;
     margin: 0 0 10px;
-    border-radius: 40px;
+    // border-radius: 40px;
     overflow: hidden;
     &.hidde {
         display: none;
     }
     @include breakpoint(md) {
-        flex-basis: calc(100% / 3 - 20px);
+        flex-basis: calc(100% / 4 - 20px);
         margin: 0 10px 10px;
     }
 }
@@ -59,7 +66,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: $green;
+        background-color: rgba($color: $black-2, $alpha: .9);
         opacity: 0;
         transition: .3s ease;
         z-index: 0;
@@ -107,4 +114,4 @@
             margin: 0;
         }
     }
-}
+} 

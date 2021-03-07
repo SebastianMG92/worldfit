@@ -1,13 +1,15 @@
 // Webpack uses this to work with directories
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+require("@babel/polyfill");
+
 
 module.exports = {
-  entry: ['./src/js/index.js'],
+  entry: ["@babel/polyfill", './src/js/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/wp-content/themes/petgold/dist/',
-    // publicPath: '/dist/',
+    // publicPath: '/wp-content/themes/worldfit/dist/',
+    publicPath: '/dist/',
     filename: 'bundle.js',
     chunkFilename: '[id][hash].js'
   },
@@ -74,8 +76,8 @@ module.exports = {
     new MiniCssExtractPlugin({
         filename: "bundle.css",
         chunkFilename: '[id][hash].css',
-        publicPath: '/wp-content/themes/petgold/dist/',
-        // publicPath: '/dist/',
+        // publicPath: '/wp-content/themes/worldfit/dist/',
+        publicPath: '/dist/',
     })
   ],
   devtool: 'none',

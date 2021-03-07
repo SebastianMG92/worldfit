@@ -1,0 +1,51 @@
+.newsletterBadge {
+    background-color: $black-2;
+}
+
+
+.newsletterBadge__container {
+    text-align: center;
+    .heading {
+        font-size: 20px;
+        margin: 0 0 20px;
+    }
+    @include breakpoint(md) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        .heading {
+            margin: 0 20px 0 0;
+            font-size: 25px;
+        }
+    }
+    @include breakpoint(md) {
+        .heading {
+            font-size: 30px;
+        }
+    }
+}
+
+.newsletterBadge__form {
+    display: flex;
+    input[type="email"] {
+        border: 0;
+        padding: 10px 5px;
+        flex-grow: 1;
+        &::placeholder {
+            font-size: 12px;
+            color: $gray-3;
+        }
+    }
+    input[type="submit"] {
+        border: 0;
+        color: white;
+        text-transform: uppercase;
+        background-color: $orange;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    @include breakpoint(md) {
+        flex-basis: 50%;
+    }
+}

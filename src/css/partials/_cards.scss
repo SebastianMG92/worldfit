@@ -1,0 +1,79 @@
+
+.cards__container--item {
+    position: relative;
+
+    @include breakpoint(md) {
+        flex-basis: 49%;
+    }
+}
+
+.cards__container--link {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    height: 0;
+    padding-bottom: 100%;
+    margin-bottom: 10px;
+    &.rectangle {
+        padding-bottom: 44.25%;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($color: $black-1, $alpha: 0);
+        transition: .3s ease-out;
+    }
+    &:hover, &:focus {
+        &::after {
+            background-color: rgba($color: $black-1, $alpha: .5);
+        }
+    }
+    img {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
+
+.cards__container--item--content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1;
+    .heading {
+        font-size: 35px;
+        color: white;
+        text-shadow: 1px 1px 20px black;
+        margin: 0 0 10px;
+    }
+    .btn-solid {
+        padding: 8px 30px;
+    }
+    @include breakpoint(lg) {
+        .btn-solid {
+            padding: 10px 40px;
+        }
+    }
+}
+
+.cards__container {
+    @include breakpoint(md) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+}

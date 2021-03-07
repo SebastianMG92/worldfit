@@ -50,6 +50,33 @@ function getViewport() {
   return direction;
 }
 
+// Margin header
+function marginMain() {
+  let header;
+  const main = document.querySelector('.site-main');
+  window.addEventListener('load', e => {
+    setTimeout(() => {
+      header = document.querySelector('#header');
+      main.style.marginTop = header.offsetHeight + 'px';
+    }, 200);
+  });
+  window.addEventListener('resize', e => {
+    setTimeout(() => {
+      header = document.querySelector('#header');
+      main.style.marginTop = header.offsetHeight + 'px';  
+    }, 200);
+  });
+  window.addEventListener('scroll', e => {
+    setTimeout(() => {
+      if (window.pageYOffset < 100) {
+        header = document.querySelector('#header');
+        main.style.marginTop = header.offsetHeight + 'px';
+      }
+    }, 200);
+  })
+}
+
+
 // Check if an element exists in array using a comparer function
 Array.prototype.inArray = function(comparer) { 
   for(var i=0; i < this.length; i++) { 
@@ -154,7 +181,7 @@ class Header {
       // Sticky menu
       this.stickyTransparent();
 
-      this.searchButton = this.headerContainer.querySelector('.header__rightMenu--search');
+      this.searchButton = this.headerContainer.querySelector('.header__icons--search');
       // Accesibility
       // const desktop = window.matchMedia("(min-width: 768px)");
       // this.closeAcc = document.querySelector('.acc-close-menu');
@@ -292,14 +319,29 @@ class Header {
     }
   }
   stickyTransparent(){
-
+    let lastScrollTop = 0;
     window.onscroll = () => {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
       const trigger = 100;
-      if (window.pageYOffset > trigger - (this.headerContainer.offsetHeight / 2) ) {
+
+      if (st < lastScrollTop){
+        this.headerContainer.classList.add('is-sticky-up');
+        this.headerContainer.classList.remove('is-sticky-down');
+      } else if (st > lastScrollTop) {
+        this.headerContainer.classList.add('is-sticky-down');
+        this.headerContainer.classList.remove('is-sticky-up');
+      }
+
+
+      if (window.pageYOffset > trigger) {
         this.headerContainer.classList.add('is-sticky');
       } else {
+        this.headerContainer.classList.remove('is-sticky-up');
         this.headerContainer.classList.remove('is-sticky');
+        this.headerContainer.classList.remove('is-sticky-down');
       }
+
+      lastScrollTop = st <= 0 ? 0 : st;
     }
 
   }
@@ -561,7 +603,8 @@ class Sliders {
   constructor() {
     this.headerSlide = document.querySelectorAll('.js-header-slide');
     this.productSlide = document.querySelectorAll('.js-product-slide');
-    this.largeSlide = document.querySelectorAll('.js-slide-large')
+    this.tabSlide = document.querySelectorAll('.js-product-tabSlide');
+    this.largeSlide = document.querySelectorAll('.js-slide-large');
     this.start();
   }
   start() {
@@ -651,25 +694,24 @@ class Sliders {
         const arrow_prev = slide.parentElement.querySelector('.js-product-slide-prev');
         const arrow_next = slide.parentElement.querySelector('.js-product-slide-next');
         // Pagination
-        const pagination = slide.parentElement.querySelector('.js-product-slide-pagination');
+        const navigation = slide.parentElement.querySelector('.js-product-slide-navigation');
 
         arrow_prev.classList.add(`js-product-slide-prev-${i}`);
         arrow_next.classList.add(`js-product-slide-next-${i}`);
-        pagination.classList.add(`js-product-slide-pagination-${i}`);
+        navigation.classList.add(`js-product-slide-navigation-${i}`);
 
 
         var headerSwiper = new Swiper(slide, {
           // Optional parameters
           slidesPerView: 1,
-          spaceBetween: 10,
-          loop: true,
+          spaceBetween: 0,
           lazy: true,
           observer: true,
           observeParents: true,
           threshold: 20,
           // If we need pagination
-          pagination: {
-            el: `.js-product-slide-pagination-${i}`,
+          scrollbar: {
+            el: `.js-product-slide-navigation-${i}`,
           },
           // Navigation arrows
           navigation: {
@@ -678,16 +720,59 @@ class Sliders {
           },
           // Responsive
           breakpoints: {
-            // when window width is >= 640px
-            992: {
+            // when window width is >= 640px.
+            768: {
+              spaceBetween: 10,
               slidesPerView: 2,
             },
-            1200: {
+            992: {
+              spaceBetween: 10,
               slidesPerView: 3,
             },
-            1400: {
-              slidesPerView: 4,
-            }
+          }
+        })
+      }
+    }
+    if (this.tabSlide.length > 0) {
+      
+      for (let i = 0; i < this.tabSlide.length; i++) {
+        const slide = this.tabSlide[i];
+        
+        // Arrows
+        const arrow_prev = slide.parentElement.querySelector('.js-product-slide-prev');
+        const arrow_next = slide.parentElement.querySelector('.js-product-slide-next');
+  
+        arrow_prev.classList.add(`js-product-slide-prev-${i}`);
+        arrow_next.classList.add(`js-product-slide-next-${i}`);
+
+
+        var headerSwiper = new Swiper(slide, {
+          // Optional parameters
+          slidesPerView: 1,
+          lazy: true,
+          observer: true,
+          observeParents: true,
+          threshold: 20,
+          // Navigation arrows
+          navigation: {
+            nextEl: `.js-product-slide-next-${i}`,
+            prevEl: `.js-product-slide-prev-${i}`,
+          },
+          // Responsive
+          breakpoints: {
+            // when window width is >= 640px.
+            576: {
+              spaceBetween: 10,
+              slidesPerView: 1.2,
+            },
+            768: {
+              spaceBetween: 10,
+              slidesPerView: 2.2,
+            },
+            992: {
+              spaceBetween: 10,
+              slidesPerView: 4.2,
+            },
           }
         })
       }
@@ -958,6 +1043,7 @@ class Lightboxes {
   constructor() {
     this.lightboxes = document.querySelectorAll('.js-lightbox');
     this.galleryImages = document.querySelectorAll('.js-lightbox-gallery');
+    this.btnImage = document.querySelectorAll('.js-lightbox-btnImage')
     this.start();
   }
   start() {
@@ -1015,6 +1101,33 @@ class Lightboxes {
       }
     }
 
+    if (this.btnImage.length > 0) {
+      for (let i = 0; i < this.btnImage.length; i++) {
+        const container = this.btnImage[i];
+        const images = container.dataset.images.split(',');
+        container.classList.add(`js-lightbox-btnImage-${i}`);
+
+        let config = {
+          selector: `.js-lightbox-btnImage-${i}`,
+          elements: [],
+          startAt: 0,
+        }
+
+        config.selector = `.js-lightbox-btnImage-${i}`;
+
+        for (let j = 0; j < images.length; j++) {
+          const image = images[j];
+          let image_config = {
+            href: `${image}`,
+            type: 'image',
+          };
+          config.elements.push(image_config);
+        };
+
+        const lightbox = GLightbox(config);
+      }
+    }
+
   }
 }
 
@@ -1053,6 +1166,7 @@ class Gallery {
 // Run apps
 ////////////////////
 document.addEventListener('DOMContentLoaded', function () {
+
   var lazy = new LazyLoad();
   var header = new Header();
   var woocommerce = new Woocommerce();
@@ -1062,6 +1176,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var animations = new Animations();
   var lightboxes = new Lightboxes();
   var gallery = new Gallery();
+
+  marginMain();
 
 });
 

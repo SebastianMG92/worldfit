@@ -1,15 +1,22 @@
 .ctaBar {
     position: relative;
     z-index: 950;
-    background-color: $green;
-    padding: 10px 0;
-    transition: .3s ease;
+    background-color: $black;
+    transition: .15s ease-out;
+    overflow: hidden;
+    max-height: 40px;
+    .container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: .15s ease-out;
+    }
 }
 
 .ctaBar__left {
-    display: none;
-    @include breakpoint(md) {
-        display: flex;
+    display: flex;
+    justify-content: center;
+    @include breakpoint(sm) {
+        justify-content: flex-start;
     }
 }
 
@@ -22,29 +29,45 @@
         text-decoration: none;
         font-weight: bold;
         font-size: 14px;
+        margin: 0 10px 0 0;
         &:hover, &:focus {
-            text-decoration: underline;
+            svg {
+                fill: $gray; 
+            }
         }
         svg {
-            width: 20px;
-            height: 20px;
+            display: block;
+            width: 18px;
+            height: 18px;
             fill: white;
-            margin: 0 5px 0 0;
+        }
+    }
+    &:last-child {
+        .link {
+            margin: 0;
         }
     }
     @include breakpoint(md) {
-        margin: 0 20px 0 0;
-        &:last-child {
-            margin: 0;
+        .link {
+            margin: 0 15px 0 0;
+        }
+    }
+    @include breakpoint(lg) {
+        .link {
+            svg {
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 }
 
 .ctaBar__right {
-    display: flex;
-    justify-content: space-between;
-    @include breakpoint(md) {
+    display: none;
+    @include breakpoint(sm) {
+        display: flex;
         justify-content: flex-end;
+        align-self: center;
     }
 }
 
@@ -55,22 +78,61 @@
         align-items: center;
         color: white;
         text-decoration: none;
-        font-weight: bold;
+        font-weight: 400;
         font-size: 14px;
+        padding: 0 5px;
+        border-right: 1px solid white;
+        line-height: 1;
         &:hover, &:focus {
-            text-decoration: underline;
+            color: $gray;
         }
-        svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-            margin: 0 5px 0 0;
+    }
+    &:last-child {
+        .link {
+            padding: 0 0 0 5px;
+            border-right: 0;
         }
     }
     @include breakpoint(md) {
-        margin: 0 20px 0 0;
+        .link {
+            padding: 0 10px;
+        }
         &:last-child {
+            .link {
+                padding: 0 0 0 10px;
+                border-right: 0;
+            }
+        }
+    }
+}
+
+
+
+.riborn {
+    background-color: $black-2;
+    text-align: center;
+    transition: .15s ease-out;
+    overflow: hidden;
+    max-height: 40px;
+    .container {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .text {
+        * {
+            font-family: $font-secondary;
+            color: white;
+            text-decoration: none;
             margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+    @include breakpoint(md) {
+        .container {
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
     }
 }

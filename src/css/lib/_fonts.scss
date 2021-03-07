@@ -6,17 +6,16 @@
 ////////////////////////
 // Futura weigths
 ///////////////////////
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 @font-face {
-    font-family: 'Mikado Bold DEMO';
-    src: url('../fonts/mikado/MikadoBoldDEMO.eot');
-    src: url('../fonts/mikado/MikadoBoldDEMO.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/mikado/MikadoBoldDEMO.woff2') format('woff2'),
-        url('../fonts/mikado/MikadoBoldDEMO.woff') format('woff'),
-        url('../fonts/mikado/MikadoBoldDEMO.ttf') format('truetype'),
-        url('../fonts/mikado/MikadoBoldDEMO.svg#MikadoBoldDEMO') format('svg');
+    font-family: 'Bebas';
+    src: url('../fonts/bebas/BebasNeue-Regular.eot');
+    src: url('../fonts/bebas/BebasNeue-Regular.eot?#iefix') format('embedded-opentype'),
+        // url('../fonts/bebas/BebasNeue-Regular.woff2') format('woff2'),
+        url('../fonts/bebas/BebasNeue-Regular.woff') format('woff'),
+        url('../fonts/bebas/BebasNeue-Regular.ttf') format('truetype'),
+        url('../fonts/bebas/BebasNeue-Regular.svg#BebasNeue-Regular') format('svg');
     font-weight: bold;
     font-style: normal;
     font-display: swap;

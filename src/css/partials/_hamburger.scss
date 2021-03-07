@@ -13,7 +13,7 @@ $hamburger-padding-y: 12px !default;
 $hamburger-layer-width: 28px !default;
 $hamburger-layer-height: 2px !default;
 $hamburger-layer-spacing: 5px !default;
-$hamburger-layer-color: $purple !default;
+$hamburger-layer-color: white !default;
 $hamburger-layer-border-radius: 5px !default;
 $hamburger-hover-opacity: 1 !default;
 $hamburger-active-layer-color: $hamburger-layer-color !default;
@@ -145,7 +145,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
     .hamburger-inner {
       transform: rotate(45deg);
       transition-delay: 0.12s;
-      background-color: $purple;
+      background-color: $black;
       transition-timing-function: cubic-bezier(
         0.215,
         0.61,
@@ -156,7 +156,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
       &::before {
         top: 0;
         opacity: 0;
-        background-color: $purple;
+        background-color: $black;
         transition: top 0.075s ease,
           opacity 0.075s 0.12s ease;
       }
@@ -164,7 +164,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
       &::after {
         bottom: 0;
         transform: rotate(-90deg);
-        background-color: $purple;
+        background-color: $black;
         transition: bottom 0.075s ease,
         transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       }

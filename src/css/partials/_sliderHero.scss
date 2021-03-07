@@ -25,51 +25,81 @@
     // position: relative;
     text-align: center;
     width: 100%;
-    max-width: 80%;
+    max-width: 75%;
     z-index: 1;
-    .subheading {
-        color: $green;
-        margin: 0;
-        font-size: 18px;
-        @include fontfluid(20, 18);
+    .text {
+        color: white;
+        margin: 0 0 10px;
+        font-size: 14px;
+        display: none;
     }
     .heading {
         color: white;
         font-size: 20px;
-        margin: 0 0 10px;
+        margin: 0 0 5px;
         @include fontfluid(40, 20);
     }
-    .btn-radio {
+    .btn-solid {
         font-size: 14px;
         padding: 5px 8px;
     }
-    @include breakpoint(md) {
-        max-width: 90%;
-        .subheading {
-            font-size: 28px;
+    @include breakpoint(sm) {
+        .text {
+            display: block;
         }
-        .heading {
-            font-size: 50px;
+    }
+    @include breakpoint(md) {
+        max-width: 400px;
+        width: auto;
+        padding: 50px;
+        &.top-left {
+            top: 0;
+            left: 0;
+            transform: initial;
+            text-align: left;
+        }
+        &.top-right {
+            top: 0;
+            left: initial;
+            right: 0;
+            transform: initial;
+            text-align: left;
+        }
+        &.bottom-left {
+            top: initial;
+            transform: initial;
+            text-align: left;
+            bottom: 0;
+            left: 0;
+        }
+        &.bottom-right {
+            top: initial;
+            left: initial;
+            transform: initial;
+            text-align: left;
+            bottom: 0;
+            right: 0;
+        }
+        .text {
+            font-size: 16px;
             margin: 0 0 20px;
         }
-        .btn-radio {
-            font-size: 16px;
+        .heading {
+            font-size: 30px;
+            margin: 0 0 10px;
+        }
+        .btn-solid {
+            font-size: 18px;
             padding: 9px 12px;
         }
     }
     @include breakpoint(lg) {
-        transform: translate(-50%,0);
-        top: initial;
-        bottom: 15%;
-        .subheading {
-            font-size: 30px;
-        }
+        padding: 100px;
         .heading {
-            font-size: 60px;
-            margin: 0 0 20px;
+            font-size: 50px;
         }
-        .btn-radio {
-            font-size: 18px;
+        .btn-solid {
+            font-size: 20px;
             padding: 9px 12px;
         }
     }
@@ -79,8 +109,9 @@
     display: block;
     position: relative;
     z-index: 1;
-    padding-bottom: 35%;
+    padding-bottom: 56.25%;
     width: 100%;
+    overflow: hidden;
     &::after {
         content: "";
         position: absolute;
@@ -101,6 +132,18 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
+    }
+    video {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 100%;
+        min-width: 100%;
+    }
+    @include breakpoint(md) {
+        padding-bottom: 40%;
     }
 }
 
